@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: 50b8db7fd83149c47a2939248bc636f4
+timeCreated: 1487936011
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: meleemanpartsheet_0
+    21300002: meleemanpartsheet_1
+    21300004: meleemanpartsheet_2
+    21300006: meleemanpartsheet_3
+    21300008: meleemanpartsheet_4
+    21300010: meleemanpartsheet_5
+    21300012: meleemanpartsheet_6
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: meleemanpartsheet_0
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1587
+        width: 106
+        height: 358
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: meleemanpartsheet_1
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 1521
+        width: 180
+        height: 485
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5010309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: meleemanpartsheet_2
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 1584
+        width: 234
+        height: 359
+      alignment: 9
+      pivot: {x: 0.49786326, y: 0.5013927}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: meleemanpartsheet_3
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 939
+        width: 225
+        height: 512
+      alignment: 9
+      pivot: {x: 0.49333334, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: meleemanpartsheet_4
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 964
+        width: 359
+        height: 486
+      alignment: 9
+      pivot: {x: 0.5027855, y: 0.5010288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: meleemanpartsheet_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 357
+        width: 226
+        height: 512
+      alignment: 9
+      pivot: {x: 0.4977876, y: 0.5019531}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: meleemanpartsheet_6
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 499
+        width: 287
+        height: 250
+      alignment: 9
+      pivot: {x: 0.4912892, y: 0.508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+<<<<<<< HEAD
+  userData: 97600466109402
+=======
+  userData: 97609255603243
+>>>>>>> origin/master
+  assetBundleName: 
+  assetBundleVariant: 
