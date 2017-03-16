@@ -80,7 +80,12 @@ public class LevelData : MonoBehaviour
             Fight();
         //DebugLog();
         if (m_displayedScore < m_gameScore)
-            m_displayedScore += SCOREROLLSPEED;
+        {
+            if (m_displayedScore - m_gameScore < -500)
+                m_displayedScore += SCOREROLLSPEED * 10;
+            else
+                m_displayedScore += SCOREROLLSPEED;
+        }
         if (m_displayedScore > m_gameScore)
             m_displayedScore = m_gameScore;
         m_scoreDisplay.text = m_displayedScore.ToString();
@@ -91,10 +96,12 @@ public class LevelData : MonoBehaviour
         {
             m_multiplicationTimer.GetComponentInChildren<Text>().text = "x" + m_scoreMultiplier;
             m_multiplicationTimer.value = m_scoreMultiplierDuration;
-            m_scoreMultiplierDuration -= Time.deltaTime;
-            if (m_scoreMultiplierDuration <= 0)
-                BreakStreak();
         }
+        if (m_scoreMultiplierDuration > 0)
+            m_scoreMultiplierDuration -= Time.deltaTime;
+        else if (m_scoreMultiplierDuration <= 0)
+            BreakStreak();
+        //GameObject.Find("GameData").GetComponent<WinEvent>().m_won = true;
     }
 
     void Travel()
@@ -108,7 +115,6 @@ public class LevelData : MonoBehaviour
             m_fighting = true;
             PrepareFight();
         }
-        //Debug.Log(m_distanceLeft);
     }
 
     void Fight()
@@ -151,7 +157,11 @@ public class LevelData : MonoBehaviour
                 Instantiate(p_wave.Subwaves[i].Enemies[j].Object, p_wave.Subwaves[i].Enemies[j].Location, spawnRotation);
             }
             yield return new WaitUntil(new System.Func<bool>(() => p_wave.Subwaves[i].m_cleared));
+            if (i == p_wave.Subwaves.Length - 1)
+                Time.timeScale = .5f;
             yield return new WaitForSeconds(m_SecondsBetweenSubwaves);
+            if (i == p_wave.Subwaves.Length - 1)
+                Time.timeScale = 1f;
         }
         currentWave.m_current = false;
         m_fighting = false;
@@ -164,6 +174,8 @@ public class LevelData : MonoBehaviour
             Destroy(m_activeCollectibles[i]);
         }
         AssignDistance();
+        if (currentWaveIndex == Waves.Length - 1)
+            GameObject.Find("GameData").GetComponent<WinEvent>().m_won = true;
         StopCoroutine("startWave");
     }
 
@@ -184,13 +196,13 @@ public class LevelData : MonoBehaviour
     public void onKill(int p_score, float p_x, float p_y)
     {
         m_killCount++;
-        if(m_killStreak < 9)
+        if (m_killStreak < 9)
             m_killStreak++;
         if (m_killStreak > 1)
             m_multiplicationTimer.gameObject.SetActive(true);
         m_scoreMultiplierDuration = MULTIPLICATIONDURATION;
         AddScore(p_score);
-        CollectibleSpawn(p_x,p_y);
+        CollectibleSpawn(p_x, p_y);
     }
 
     public void BreakStreak()
@@ -216,14 +228,26 @@ public class LevelData : MonoBehaviour
         Application.LoadLevel(Application.loadedLevel);       //Load Level 0 (same Level) to make a restart
     }
 
+    public int getFinalScore()
+    {
+        return m_gameScore;
+    }
+    public int getHighScore()
+    {
+        return m_highScore;
+    }
+
+    public void setHighScore(int p_value)
+    {
+        m_highScore = p_value;
+    }
+
     public void GameOver()
     {
         m_finalScoreDisplay.text = m_gameScore.ToString();
-        if(m_gameScore > m_highScore)
-        {
+        if (m_gameScore > m_highScore)
             m_highScore = m_gameScore;
-            m_highScoreDisplay.text = m_gameScore.ToString();
-        }
+        m_highScoreDisplay.text = m_highScore.ToString();
         ResetValues();
     }
 
