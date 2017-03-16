@@ -174,7 +174,7 @@ public class LevelData : MonoBehaviour
             Destroy(m_activeCollectibles[i]);
         }
         AssignDistance();
-        if (currentWaveIndex == Waves.Length - 1)
+        if (currentWaveIndex >= 1)
             GameObject.Find("GameData").GetComponent<WinEvent>().m_won = true;
         StopCoroutine("startWave");
     }

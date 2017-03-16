@@ -84,7 +84,7 @@ public class PlayerScript : MonoBehaviour
             m_currentSpeed = m_speed;
         else
             m_currentSpeed = m_speed * m_focusSlowdown;
-        if(GetComponent<PlayerHealth>().isDead)
+        if(GetComponent<PlayerHealth>().isDead || GameObject.Find("GameData").GetComponent<WinEvent>().m_won)
             return;
 
         playerAnimator.SetBool("Walk", false);
